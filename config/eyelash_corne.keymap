@@ -28,6 +28,13 @@
 
 &soft_off { hold-time-ms = <2000>; };
 
+&mt {
+    compatible = "zmk,behavior-hold-tap";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "balanced";
+};
+
 / {
     behaviors {
         td0: td0 {
@@ -35,13 +42,6 @@
             display-name = "Shift/Caps Lock Tap Dance";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-
-        mt: mt {
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "balanced";
         };
     };
 
