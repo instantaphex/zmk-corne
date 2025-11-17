@@ -4,9 +4,7 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -58,43 +56,41 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-                &kp TAB    &kp Q        &kp W        &kp E        &kp R        &kp T                               &kp UP                &kp Y        &kp U        &kp I        &kp O        &kp P        &kp BSPC
-                &td0       &kp A        &mt LALT S   &mt LCTRL D  &mt LSHFT F  &mt LGUI G              &kp LEFT   &kp ENTER    &kp RIGHT   &mt RGUI H   &mt RSHFT J  &mt RCTRL K  &mt RALT L   &kp SEMI    &kp SQT
-                &kp LCTRL  &kp Z        &kp X        &kp C        &kp V        &kp B        &kp SPACE              &kp DOWN               &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp ESC
-                /* LEFT THUMBS ---------------------------- RIGHT THUMBS */
-                &lt 2 LGUI    &kp BSPC      &kp TAB                        &lt 3 ENTER   &lt 1 SPACE    &lt 2 RALT
+&kp TAB    &kp Q  &kp W       &kp E        &kp R        &kp T                              &kp UP                &kp Y        &kp U        &kp I        &kp O       &kp P     &kp BSPC
+&td0       &kp A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &mt LGUI G               &kp LEFT  &kp ENTER  &kp RIGHT  &mt RGUI H   &mt RSHFT J  &mt RCTRL K  &mt RALT L  &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X       &kp C        &kp V        &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH  &kp ESC
+                              &lt 2 LGUI   &kp BSPC     &kp TAB                                                  &lt 3 ENTER  &lt 1 SPACE  &lt 2 RALT
             >;
         };
 
-lower_layer {
-    display-name = "NUMBER";
-    bindings = <
-        &trans  &trans   &trans   &trans   &kp N1  &kp N2  &kp N3  &trans    &mmv MOVE_UP    &trans   &trans    &trans   &trans   &trans
-        &trans  &kp N4   &kp N5   &kp N6   &trans   &trans   &trans   &mkp LCLK  &mmv MOVE_LEFT  &mkp LCLK   &mmv MOVE_RIGHT   &trans   &trans
-        &trans  &kp N7   &kp N8   &kp N9   &trans   &trans   &trans   &trans   &kp N0     &trans   &trans    &trans   &trans
-                            &trans  &trans  &trans   &trans      &trans       &trans
-    >;
-};
+        lower_layer {
+            display-name = "NUMBER";
+            bindings = <
+&trans  &trans  &trans        &trans            &trans          &trans                              &trans          &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &trans
+&trans  &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LEFT_COMMAND            &trans  &trans  &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &trans
+&trans  &trans  &trans        &trans            &trans          &trans            &trans            &trans          &trans           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans
+                              &trans            &trans          &trans                                              &trans
+            >;
+        };
 
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-                &trans  &trans        &trans        &trans        &kp BSLH    &kp DOT                             &mmv MOVE_UP                     &kp AMPS     &kp DLLR    &kp LBKT    &kp RBKT    &trans    &kp BSPC
-                &trans  &kp EXCL      &kp MINUS     &kp PLUS      &kp EQUAL   &kp HASH           &mmv MOVE_LEFT   &mkp LCLK     &mmv MOVE_RIGHT &kp PIPE    &kp COLON   &kp LPAR    &kp RPAR   &trans   &trans
-                &trans  &kp GRAVE     &kp FSLH      &kp ASTRK     &kp AT      &kp CARET  &kp C_MUTE             &mmv MOVE_DOWN                    &kp TILDE    &kp PRCNT   &kp LBRC    &kp RBRC    &trans   &kp ESC
-                                     &trans        &trans      &trans                                                             &trans      &trans       &trans
+&trans  &trans     &trans     &trans     &kp BSLH   &kp DOT                                  &mmv MOVE_UP                     &kp AMPS   &kp DLLR   &kp LBKT  &kp RBKT  &trans  &kp BSPC
+&trans  &kp EXCL   &kp MINUS  &kp PLUS   &kp EQUAL  &kp HASH                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PIPE   &kp COLON  &kp LPAR  &kp RPAR  &trans  &trans
+&trans  &kp GRAVE  &kp FSLH   &kp ASTRK  &kp AT     &kp CARET  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp TILDE  &kp PRCNT  &kp LBRC  &kp RBRC  &trans  &kp ESC
+                              &trans     &trans     &trans                                                                    &trans     &trans     &trans
             >;
         };
 
         layer_3 {
             display-name = "NAV";
             bindings = <
-                &caps_word  &trans        &trans        &trans        &trans        &trans                             &mmv MOVE_UP                     &trans       &trans       &trans       &trans       &trans    &kp BSPC
-                &trans      &trans        &kp LALT      &kp LCTRL     &kp LSHFT     &kp LGUI        &mmv MOVE_LEFT   &mkp LCLK     &mmv MOVE_RIGHT  &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT  &trans    &trans
-                &trans      &trans        &trans        &trans        &trans        &trans          &trans            &mmv MOVE_DOWN                    &trans       &trans       &trans       &trans      &trans    &kp ESC
-                                     &trans        &trans        &trans                                                                 &trans      &trans       &trans
+&caps_word  &trans  &trans    &trans     &trans     &trans                              &mmv MOVE_UP                     &trans    &trans    &trans  &trans     &trans  &kp BSPC
+&trans      &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LGUI            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans      &trans  &trans    &trans     &trans     &trans    &trans                    &mmv MOVE_DOWN                   &trans    &trans    &trans  &trans     &trans  &kp ESC
+                              &trans     &trans     &trans                                                               &trans    &trans    &trans
             >;
         };
     };
 };
-
