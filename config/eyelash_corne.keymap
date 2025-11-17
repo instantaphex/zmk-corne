@@ -36,6 +36,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
+        mt: mt {
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+        };
     };
 
     rgb_encoder: rgb_encoder {
