@@ -89,6 +89,7 @@
                 &trans  &kp LALT         &kp LCTRL       &kp LSHFT     &kp LGUI      &trans                         &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp N0           &kp N4           &kp N5           &kp N6           &trans   &trans
                 &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF &trans        &trans        &rgb_ug RGB_COLOR_HSB(200,100,100)  &kp C_MUTE
                                          &trans        &trans        &trans                                                                          &kp INS          &kp DEL          &trans
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -100,6 +101,7 @@
                 &trans  &kp EXCL      &kp MINUS     &kp PLUS      &kp EQUAL   &kp HASH           &mmv MOVE_LEFT   &mkp LCLK     &mmv MOVE_RIGHT &kp PIPE    &kp COLON   &kp LPAR    &kp RPAR   &trans   &trans
                 &trans  &kp GRAVE     &kp FSLH      &kp ASTRK     &kp AT      &kp CARET  &kp C_MUTE             &mmv MOVE_DOWN                    &kp TILDE    &kp PRCNT   &kp LBRC    &kp RBRC    &trans   &kp ESC
                                      &trans        &trans      &trans                                                             &trans      &trans       &trans
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -111,6 +113,7 @@
                 &trans      &trans        &kp LALT      &kp LCTRL     &kp LSHFT     &kp LGUI        &mmv MOVE_LEFT   &mkp LCLK     &mmv MOVE_RIGHT  &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT  &trans    &trans
                 &trans      &trans        &trans        &trans        &trans        &trans          &trans            &mmv MOVE_DOWN                    &trans       &trans       &trans       &trans      &trans    &kp ESC
                                      &trans        &trans        &trans                                                                 &trans      &trans       &trans
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
             sensor-bindings = <&scroll_encoder>;
         };
