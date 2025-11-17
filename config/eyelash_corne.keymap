@@ -64,7 +64,6 @@
                 /* LEFT THUMBS ---------------------------- RIGHT THUMBS */
                 &lt 2 LGUI    &kp BSPC      &kp TAB                        &lt 3 ENTER   &lt 1 SPACE    &lt 2 RALT
             >;
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
@@ -75,7 +74,6 @@
                 &trans   &kp N7     &kp N8     &kp N9    &trans   &trans   &trans    &trans    &kp N0    &trans   &trans   &trans   &trans   
                                      &trans        &trans      &trans                                                             &trans      &trans       &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
         };
 
         raise_layer {
@@ -86,7 +84,6 @@
                 &trans  &kp GRAVE     &kp FSLH      &kp ASTRK     &kp AT      &kp CARET  &kp C_MUTE             &mmv MOVE_DOWN                    &kp TILDE    &kp PRCNT   &kp LBRC    &kp RBRC    &trans   &kp ESC
                                      &trans        &trans      &trans                                                             &trans      &trans       &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
         };
 
         layer_3 {
@@ -97,7 +94,6 @@
                 &trans      &trans        &trans        &trans        &trans        &trans          &trans            &mmv MOVE_DOWN                    &trans       &trans       &trans       &trans      &trans    &kp ESC
                                      &trans        &trans        &trans                                                                 &trans      &trans       &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
