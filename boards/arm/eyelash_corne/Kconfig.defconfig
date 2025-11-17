@@ -58,4 +58,16 @@ config LED_PWM
 
 endif # ZMK_BACKLIGHT
 
+config ZMK_RGB
+    bool "Enable RGB support"
+    default y
+
+config ZMK_RGB_EFFECTS
+    bool "Enable RGB effects"
+    default y
+
+config ZMK_RGB_PER_KEY
+    bool "Enable per-key RGB support"
+    default y
+
 endif # BOARD_EYELASH_CORNE_LEFT || BOARD_EYELASH_CORNE_RIGHT

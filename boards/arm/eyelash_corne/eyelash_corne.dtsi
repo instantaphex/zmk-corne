@@ -223,10 +223,19 @@ nice_view_spi: &spi0 {
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <21>;
+        /* this was here before... who knows... */
+        /* chain-length = <21>; */
+        chain-length = <42>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
 };
+
+&led_strip {
+    compatible = "zmk,ws2812";
+    chain-length = <42>;  // This number should match the total number of LEDs in your Corne
+    color-mode = "rgb";   // Use RGB color mode for the LEDs
+};
+
