@@ -16,7 +16,7 @@
 
 &msc {
     acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
+    time-to-max-speed-ms = <100>;     // 300
     delay-ms = <0>;                   // 0
 };
 
@@ -29,7 +29,6 @@
 &soft_off { hold-time-ms = <2000>; };
 
 &mt {
-    compatible = "zmk,behavior-hold-tap";
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
     flavor = "balanced";
@@ -79,7 +78,7 @@
 &kp LCTRL  &kp Z        &kp X        &kp C        &kp V        &kp B        &kp SPACE              &kp DOWN               &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp ESC
 
             /* LEFT THUMBS ---------------------------- RIGHT THUMBS */
-                         &kp 2 LGUI    &kp BSPC      &kp TAB                        &lt 3 ENTER  &lt 1 SPACE    &kp 2 RALT
+                         &lt 2 LGUI    &kp BSPC      &kp TAB                        &lt 3 ENTER   &lt 1 SPACE    &lt 2 RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -122,3 +121,4 @@
         };
     };
 };
+
