@@ -1,6 +1,62 @@
 / {
-    /* Per-key RGB for eyelash corne – 29 LEDs per half = 58 total */
+    /* 42-key Corne with per-key RGB only (21 LEDs per half) */
     rgb_underglow: rgb_underglow {
         chain-length = <42>;
+    };
+
+    /* Standard Corne per-key LED indexing (left half 0–20, right half 21–41) */
+    key_leds: key_leds {
+        compatible = "zmk,key-leds";
+        led-indexes = <
+             6   5   4   3   2   1                  // left thumb row (bottom)
+            13  12  11  10   9   8   7
+            14  15  16  17  18  19  20                  // left top row
+
+            27  28  29  30  31  32                  // right thumb row
+            34  35  36  37  38  39  40
+            26  25  24  23  22  21  41                  // right top row (41 is usually the extra if present, but we stop at 41 max)
+        >;
+    };
+
+    /* Solid background color */
+    animations {
+        compatible = "zmk,rgb-underglow-animations";
+
+        solid_bg: solid_bg {
+            compatible = "zmk,rgb-underglow-solid";
+            label = "Solid Background";
+            color = <0x002233>;          // dark teal — change as you like
+            brightness = <80>;
+        };
+    };
+
+    /* Per-key highlights that match your exact keymap */
+    key_overrides {
+        compatible = "zmk,key-overrides";
+
+        // Thumb layer keys
+        lower_left:  lower_left  { key = <28>; color = <0x00FFFF>; brightness = <255>; };  // left inner thumb = MO 2 (SYMBOL)
+        lower_right: lower_right { key = <33>; color = <0x00FFFF>; brightness = <255>; };  // right inner thumb = MO 2 (SYMBOL)
+        raise_left:  raise_left  { key = <29>; color = <0xFFFF00>; brightness = <255>; };  // left middle thumb = MO 1 (NUMBER)
+        nav_right:   nav_right   { key = <32>; color = <0xFFFF00>; brightness = <255>; };  // right middle thumb = MO 3 (NAV)
+
+        // Mod-tap keys — soft magenta
+        mod_a:  { key = <7>;  color = <0xFF00FF>; brightness = <200>; };   // A  (LAlt)
+        mod_s:  { key = <8>;  color = <0xFF00FF>; brightness = <200>; };   // S
+        mod_d:  { key = <9>;  color = <0xFF00FF>; brightness = <200>; };   // D
+        mod_f:  { key = <10>; color = <0xFF00FF>; brightness = <200>; };   // F
+        mod_g:  { key = <11>; color = <0xFF00FF>; brightness = <200>; };   // G (LGui)
+        mod_h:  { key = <23>; color = <0xFF00FF>; brightness = <200>; };   // H (RGui)
+        mod_j:  { key = <22>; color = <0xFF00FF>; brightness = <200>; };   // J (RShift)
+        mod_k:  { key = <21>; color = <0xFF00FF>; brightness = <200>; };   // K (RCtrl)
+        mod_l:  { key = <20>; color = <0xFF00FF>; brightness = <200>; };   // L (RAlt)
+        mod_semi:{ key = <19>; color = <0xFF00FF>; brightness = <200>; };   // ;: (MO 2 on hold)
+
+        // Caps Word key — bright white
+        caps_word_key: { key = <0>; color = <0xFFFFFF>; brightness = <220>; };
+
+        // RGB toggle keys on your NUMBER layer
+        rgb_off: { key = <14>; color = <0xFF0000>; brightness = <255>; };   // RGB_OFF position
+        rgb_on:  { key = <34>; color = <0x00FF00>; brightness = <255>; };   // RGB_ON position
     };
 };
