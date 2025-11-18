@@ -50,12 +50,12 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
   - {t: '$$mdi:apple-keyboard-option$$', h: SYMBOL}
   NUMBER:
-  - RGB COLOR HSB(199,90,55)
+  - {t: '$$mdi:transfer$$', type: trans}
   - RGB COLOR HSB(336,92,54)
   - RGB COLOR HSB(21,78,57)
   - RGB COLOR HSB(116,48,54)
   - RGB COLOR HSB(0,0,100)
-  - RGB COLOR HSB(0,96,50)
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '7', s: '&'}
@@ -77,7 +77,7 @@ layers:
   - {t: '5', s: '%'}
   - {t: '6', s: ^}
   - RGB SAI
-  - RGB BRD
+  - RGB BRI
   - RGB OFF
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -248,3 +248,5 @@ layers:
 combos:
 - p: [1, 15, 29]
   k: '&soft_off'
+- p: [3, 4, 5, 7, 8, 9]
+  k: BT CLR ALL
