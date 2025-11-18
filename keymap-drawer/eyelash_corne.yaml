@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   QWERTY:
-  - $$mdi:alpha-w-box$$
+  - '&bl BL_TOG'
   - Q
   - W
   - E
@@ -13,8 +13,8 @@ layers:
   - I
   - O
   - P
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:keyboard-esc$$
+  - {t: '-', s: _}
+  - $$mdi:alpha-w-box$$
   - {t: A, h: SYMBOL}
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
@@ -29,7 +29,7 @@ layers:
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: SYMBOL, s: ':'}
   - {t: '''', s: '"'}
-  - $$mdi:apple-keyboard-control$$
+  - $$mdi:keyboard-esc$$
   - Z
   - X
   - C
@@ -50,12 +50,12 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
   - {t: '$$mdi:apple-keyboard-option$$', h: SYMBOL}
   NUMBER:
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - RGB COLOR HSB(199,90,55)
+  - RGB COLOR HSB(336,92,54)
+  - RGB COLOR HSB(21,78,57)
+  - RGB COLOR HSB(116,48,54)
+  - RGB COLOR HSB(0,0,100)
+  - RGB COLOR HSB(0,96,50)
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '7', s: '&'}
@@ -63,8 +63,8 @@ layers:
   - {t: '9', s: (}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - RGB BRD
+  - RGB SAD
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
@@ -76,8 +76,8 @@ layers:
   - {t: '4', s: $}
   - {t: '5', s: '%'}
   - {t: '6', s: ^}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - RGB SAI
+  - RGB BRD
   - RGB OFF
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
