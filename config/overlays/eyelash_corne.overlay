@@ -1,0 +1,6 @@
+/ {
+    /* Per-key RGB for eyelash corne – 29 LEDs per half = 58 total */
+    rgb_underglow: rgb_underglow {
+        chain-length = <42>;
+    };
+};
