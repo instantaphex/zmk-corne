@@ -55,23 +55,70 @@
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <3 4 5 7 8 9>;
         };
+
+        safe-enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 45>;
+        };
+
+        safe-enter2 {
+            bindings = <&kp ENTER>;
+            key-positions = <24 45>;
+        };
+    };
+
+    macros {
+        git_push_ob: git_push_ob {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp S &kp H &kp SPACE &kp MINUS &kp U &kp SPACE &kp O &kp R &kp I &kp G &kp I &kp N &kp SPACE &kp DLLR &kp LPAR &kp B &kp R &kp A &kp N &kp C &kp H &kp RPAR>;
+            label = "GIT_PUSH_OB";
+        };
+
+        git_commit_m: git_commit_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp DQT &kp DQT &kp LEFT>;
+            label = "GIT_COMMIT_M";
+        };
+
+        git_pull: git_pull {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp L &kp L>;
+            label = "GIT_PULL";
+        };
+
+        js_if_stmt: js_if_stmt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp F &kp SPACE &kp LPAR &kp RPAR &kp SPACE &kp LBRC &kp RBRC &kp LEFT_ARROW &kp LEFT &kp LEFT_ARROW &kp LEFT>;
+            label = "JS_IF_STMT";
+        };
+
+        js_arrow_fn: js_arrow_fn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp LBRC &kp RET &kp RET &kp RBRC &kp UP_ARROW &kp TAB>;
+            label = "JS_ARROW_FN";
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "Home";
             bindings = <
-&caps_word            &kp Q    &kp W       &kp E        &kp R        &kp T                              &kp UP                &kp Y        &kp U        &kp I        &kp O       &kp P            &kp MINUS
-&kp ESC               &lt 2 A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &mt LGUI G               &kp LEFT  &kp ENTER  &kp RIGHT  &mt RGUI H   &mt RSHFT J  &mt RCTRL K  &mt RALT L  &lt 2 SEMICOLON  &kp SQT
-&kp LS(LC(LEFT_ALT))  &kp Z    &kp X       &kp C        &kp V        &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH         &kp LA(LS(LC(LEFT_GUI)))
-                                           &lt 2 LGUI   &kp BSPC     &kp TAB                                                  &lt 3 ENTER  &lt 1 SPACE  &lt 2 RALT
+&caps_word            &kp Q    &kp W       &kp E        &kp R            &kp T                              &kp UP                &kp Y       &kp U        &kp I        &kp O       &kp P            &kp MINUS
+&kp ESC               &lt 2 A  &mt LALT S  &mt LCTRL D  &mt LSHFT F      &mt LGUI G               &kp LEFT  &kp ENTER  &kp RIGHT  &mt RGUI H  &mt RSHFT J  &mt RCTRL K  &mt RALT L  &lt 2 SEMICOLON  &kp SQT
+&kp LS(LC(LEFT_ALT))  &kp Z    &kp X       &kp C        &kp V            &kp B       &kp SPACE              &kp DOWN              &kp N       &kp M        &kp COMMA    &kp DOT     &kp FSLH         &kp LA(LS(LC(LEFT_GUI)))
+                                           &lt 2 LGUI   &lt 4 BACKSPACE  &lt 5 TAB                                                &to 3       &lt 1 SPACE  &lt 2 RALT
             >;
         };
 
         numbers {
-            display-name = "NUMBER";
+            display-name = "Numbers";
             bindings = <
 &trans           &trans  &trans        &trans            &trans          &trans                              &trans          &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
 &trans           &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LEFT_COMMAND            &trans  &trans  &trans  &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans
@@ -81,22 +128,22 @@
         };
 
         symbols {
-            display-name = "SYMBOL";
+            display-name = "Symbols";
             bindings = <
-&trans  &trans     &trans     &trans     &kp BSLH   &kp DOT                                  &mmv MOVE_UP                     &kp AMPS   &kp DLLR   &kp LBKT  &kp RBKT  &trans  &kp BSPC
-&trans  &kp EXCL   &kp MINUS  &kp PLUS   &kp EQUAL  &kp HASH                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PIPE   &kp COLON  &kp LPAR  &kp RPAR  &trans  &trans
-&trans  &kp GRAVE  &kp FSLH   &kp ASTRK  &kp AT     &kp CARET  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp TILDE  &kp PRCNT  &kp LBRC  &kp RBRC  &trans  &kp ESC
-                              &trans     &trans     &trans                                                                    &trans     &trans     &trans
+&trans  &trans     &kp LESS_THAN  &kp GREATER_THAN  &kp BSLH   &kp DOT                                  &mmv MOVE_UP                     &kp AMPS   &kp DLLR   &kp LBKT  &kp RBKT  &trans  &trans
+&trans  &kp EXCL   &kp MINUS      &kp PLUS          &kp EQUAL  &kp HASH                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PIPE   &kp COLON  &kp LPAR  &kp RPAR  &trans  &trans
+&trans  &kp GRAVE  &kp FSLH       &kp ASTRK         &kp AT     &kp CARET  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp TILDE  &kp PRCNT  &kp LBRC  &kp RBRC  &trans  &trans
+                                  &trans            &trans     &trans                                                                    &trans     &trans     &trans
             >;
         };
 
         nav {
-            display-name = "NAV";
+            display-name = "Nav";
             bindings = <
-&caps_word  &trans  &trans    &trans     &trans     &trans                              &mmv MOVE_UP                     &trans    &trans    &trans  &trans     &trans  &kp BSPC
-&trans      &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LGUI            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans      &trans  &trans    &trans     &trans     &trans    &trans                    &mmv MOVE_DOWN                   &trans    &trans    &trans  &trans     &trans  &kp ESC
-                              &trans     &trans     &trans                                                               &trans    &trans    &trans
+&trans  &trans  &trans    &trans     &trans     &trans                              &mmv MOVE_UP                     &trans    &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LGUI            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans    &trans     &trans     &trans    &trans                    &mmv MOVE_DOWN                   &trans    &trans    &trans  &trans     &trans  &trans
+                          &trans     &trans     &trans                                                               &trans    &trans    &trans
             >;
         };
 
@@ -106,6 +153,15 @@
 &trans  &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LEFT_GUI            &trans  &trans  &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans
 &trans  &trans  &trans        &trans            &trans          &trans        &trans            &trans          &kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans
                               &trans            &trans          &trans                                          &trans  &trans   &trans
+            >;
+        };
+
+        Util {
+            bindings = <
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans                    &trans          &trans  &trans        &trans         &trans     &trans  &trans
+&trans        &trans        &trans        &js_arrow_fn  &js_if_stmt   &trans            &trans  &trans  &trans  &trans  &git_push_ob  &git_commit_m  &git_pull  &trans  &trans
+&trans        &trans        &trans        &trans        &trans        &trans  &trans            &trans          &trans  &trans        &trans         &trans     &trans  &trans
+                                          &trans        &trans        &trans                                    &trans  &trans        &trans
             >;
         };
     };
