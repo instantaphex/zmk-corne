@@ -46,7 +46,7 @@ layers:
   - {t: LGUI, h: Symbols}
   - {t: '$$mdi:backspace$$', h: function}
   - {t: '$$mdi:keyboard-tab$$', h: Util}
-  - {t: Nav, h: toggle}
+  - {t: '$$mdi:keyboard-return$$', h: Nav}
   - {t: '$$mdi:keyboard-space$$', h: Numbers}
   - {t: '$$mdi:apple-keyboard-option$$', h: Symbols}
   Numbers:
@@ -193,7 +193,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   function:
@@ -299,7 +299,3 @@ combos:
   k: '&soft_off'
 - p: [3, 4, 5, 7, 8, 9]
   k: BT CLR ALL
-- p: [16, 45]
-  k: {t: '$$mdi:keyboard-return$$', type: enter}
-- p: [24, 45]
-  k: {t: '$$mdi:keyboard-return$$', type: enter}
